@@ -11,6 +11,17 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+setopt histignorespace
+
+# Path
+PATH="${PATH}:/home/max/mbin"
+
+# Add homebrew to the completion path
+if [ -d /usr/local/share/zsh/site-functions ]; then
+    fpath=("/usr/local/share/zsh/site-functions/" $fpath)
+fi
+
+# Aliases
 alias gpg=gpg2
 alias vi=vim
 alias history='history 0'
